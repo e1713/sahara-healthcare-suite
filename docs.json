@@ -141,5 +141,8 @@
   "description": "AfriHealth AI by ETH-1713-AI: clinician-reviewed voice documentation for Amharic-English care teams.",
   "styling": {
     "eyebrows": "breadcrumbs"
+  },
+  "background": {
+    "decoration": "windows"
   }
 }
