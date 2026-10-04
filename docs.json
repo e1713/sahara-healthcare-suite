@@ -71,9 +71,9 @@
     ]
   },
   "logo": {
-    "light": "/images/30619.png",
-    "dark": "/images/30616.png",
-    "href": "https://sahara-healthcare-suite.pages.dev/"
+    "light": "/images/logo-light.png",
+    "dark": "/images/logo-dark.png",
+    "href": "/"
   },
   "navbar": {
     "links": [
