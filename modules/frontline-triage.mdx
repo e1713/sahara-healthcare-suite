@@ -1,0 +1,48 @@
+---
+title: "Document Community Triage by Voice with Frontline Triage"
+sidebarTitle: "Frontline Triage"
+description: "Use the Frontline Triage module to record Amharic-English triage conversations, extract medical entities, and get a draft referral recommendation."
+---
+
+The Frontline Community Triage Agent (Module 1) supports community health workers (CHWs) with voice-driven triage documentation. It runs with noise suppression active and in **Amharic-English Code-Switch** mode, so workers can speak naturally across both languages.
+
+## Gold Standard cases
+
+Five pre-loaded cases let you try the module without recording live audio:
+
+| Case | Scenario |
+| --- | --- |
+| Case 1 | Acute Emergency (Chest Pain & Fever) |
+| Case 2 | Maternal Post-Op Follow-up |
+| Case 3 | Pediatric Respiratory & High Fever |
+| Case 4 | Acute Gastroenteritis & Dehydration |
+| Case 5 | Chronic Hypertension & Diabetes Follow-up |
+
+## Record a triage conversation
+
+<Steps>
+  <Step title="Choose your input">
+    Select a Gold Standard case, or tap the microphone to record live.
+  </Step>
+  <Step title="Review the recording">
+    Before upload, use **Review saved recording before upload** to listen back. Select **Download local copy** to keep a copy.
+  </Step>
+  <Step title="Upload to the speech engine">
+    Select **Save and upload recording to Intron**. Audio is processed by the Intron Sahara v2.5 ASR engine.
+  </Step>
+  <Step title="Check the results">
+    Review the transcript and its **Confidence** score, the **Extracted Medical Entities**, and the **Triage Classification**.
+  </Step>
+  <Step title="Share the recommendation">
+    Select **Speak recommendation aloud** to have the referral recommendation read out.
+  </Step>
+</Steps>
+
+<Warning>
+  The triage classification and referral recommendation are decision support. A qualified clinician must verify them. The module does not diagnose or dispatch care.
+</Warning>
+
+## Next steps
+
+- [Voice EHR Intake](/modules/voice-ehr-intake)
+- [Supported Languages](/resources/languages)

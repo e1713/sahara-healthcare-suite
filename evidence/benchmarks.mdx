@@ -1,0 +1,41 @@
+---
+title: "ASR Benchmarks and Clinical Validation Results"
+sidebarTitle: "Benchmarks"
+description: "Review measured Amharic-English transcription accuracy for Intron Sahara v2.5, baseline model comparisons, and how to run your own WER and CER checks."
+---
+
+AfriHealth AI reports speech recognition accuracy from a 15-case Amharic-English clinical benchmark. This page summarizes the measured results, explains which views are demo fixtures, and shows how to run your own accuracy checks in the **Evidence Review** section of the prototype.
+
+## Measured results
+
+Normalized scores on saved Amharic-English transcript outputs (15 verified references):
+
+| Model | Normalized WER | Target recall | M-WER |
+| --- | --- | --- | --- |
+| Intron Sahara v2.5 | 34.91% | 57.78% | 42.22% |
+| Google Gemini Flash | 11.46% | 93.33% | 6.67% |
+| OpenAI Whisper Tiny | 99.56% | 23.67% | 76.33% |
+| Meta Wav2Vec2 Base 960h | 108.23% | 2.22% | 97.78% |
+
+A separate 15-recording clinical review found 56.38% mean WER, 44.33% target-term recall, and critical-term misses in 6 cases.
+
+<Warning>
+  Offline scoring uses stored hypotheses and does not rerun model inference. Wav2Vec2 is an English-only baseline. Target recall is not a fairness metric. These results are not population-performance evidence, and clinician review is mandatory.
+</Warning>
+
+## Fixture benchmark matrix
+
+The **4-Model Benchmark Matrix** for the five Gold Standard cases is a demo view. Its WER/CER values are illustrative fixture examples, not a real model ranking. Use the measured results above for performance claims.
+
+## Run your own checks
+
+<Steps>
+  <Step title="Live benchmark">
+    In **Live Intron Sahara v2.5 Benchmark**, upload or record a sample, optionally pick a Gold Standard case (CS-01 to CS-15), and select **Run Live Benchmark**.
+  </Step>
+  <Step title="Edit-distance calculator">
+    In **Live Levenshtein Edit-Distance Calculator**, paste a reference transcript and a model hypothesis, then select **Compute Exact WER & CER**.
+  </Step>
+</Steps>
+
+The calculator uses `WER = (S + D + I) / N`, where S, D, and I are substitutions, deletions, and insertions, and N is the number of reference words.

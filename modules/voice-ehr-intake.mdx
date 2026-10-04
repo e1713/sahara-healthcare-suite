@@ -1,0 +1,50 @@
+---
+title: "Turn Consultations into SOAP Drafts with Voice EHR Intake"
+sidebarTitle: "Voice EHR Intake"
+description: "Record doctor-patient consultations with Voice EHR Intake to auto-fill a medical chart, draft a SOAP note, and export FHIR JSON after clinician sign-off."
+---
+
+The Voice Intake & EHR Integration Engine (Module 2) automates clinical note-taking during doctor consultations. It transcribes the live code-switched conversation, auto-fills a medical chart, and builds a structured SOAP draft with FHIR / EHR JSON output. Every field stays a draft until a physician verifies it.
+
+## Record a consultation
+
+<Steps>
+  <Step title="Start recording">
+    Select **Start Consultation Recording**, or **Load Case 1 of 5 Gold Standard Cases** for a scripted example.
+  </Step>
+  <Step title="Tag each speaker">
+    Under **Recording Speaker**, select **Doctor** or **Patient** before each segment.
+  </Step>
+  <Step title="Watch the chart fill in">
+    The **Auto-Filled EHR Medical Chart** updates as fields are recognized: chief complaint, duration, BP, pulse, temperature, and prescribed medications.
+  </Step>
+  <Step title="Generate the SOAP draft">
+    Select **Generate SOAP & ICD-10**. Edit any field with **Edit SOAP Draft**. Fields you change manually are not overwritten by streaming updates.
+  </Step>
+  <Step title="Verify and sign off">
+    Review the draft, then select **Verify & Sign Off Record**.
+  </Step>
+  <Step title="Export or commit">
+    Use **Preview FHIR JSON**, **Export FHIR JSON**, **Summary PDF/Text**, or **Commit to EHR**.
+  </Step>
+</Steps>
+
+## The SOAP draft
+
+- **S - Subjective:** symptoms reported by the patient.
+- **O - Objective:** observations and vitals.
+- **A - Assessment:** ICD-10 code suggestion.
+- **P - Plan & Prescription:** treatment and stewardship notes.
+
+<Note>
+  The backend validates structured SOAP JSON. Free prose returns a manual-review draft and does not generate ICD-10 codes. Prose-to-SOAP/ICD-10 generation is not complete.
+</Note>
+
+<Warning>
+  Physician verification is required before any FHIR EMR sync. Medication safety is not enforced end to end, so verify medication details independently.
+</Warning>
+
+## Next steps
+
+- [Post-Care Follow-up](/modules/post-care-follow-up)
+- [Safety and Readiness](/evidence/safety-and-readiness)

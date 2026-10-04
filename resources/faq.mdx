@@ -1,0 +1,37 @@
+---
+title: "AfriHealth AI FAQ and Troubleshooting Common Issues"
+sidebarTitle: "FAQ"
+description: "Answers to common AfriHealth AI questions about microphone access, speech engine errors, patient data, clinician review, and supported languages."
+---
+
+These answers cover the questions new AfriHealth AI users ask most often, from microphone setup to what the prototype can safely be used for.
+
+<AccordionGroup>
+  <Accordion title="My microphone does not work">
+    Open the diagnostics panel and confirm **Browser Secure Context** passes. Browsers only allow microphone capture over HTTPS or localhost. Then select **Test Mic** and allow access in your browser's site permissions.
+  </Accordion>
+
+  <Accordion title="Can I try the modules without a microphone?">
+    Yes. Use **Pre-load Audio** or **Judge Mode (No Mic Req.)** with any of the five Gold Standard cases.
+  </Accordion>
+
+  <Accordion title="The Intron Sahara API check fails">
+    Select **Ping API** again. If it still fails, the backend Intron proxy is unreachable. Contact your AfriHealth AI administrator.
+  </Accordion>
+
+  <Accordion title="Can I use real patient data?">
+    No. The prototype is not ready for identifiable patient data. See [Safety and Readiness](/evidence/safety-and-readiness).
+  </Accordion>
+
+  <Accordion title="Why did my SOAP draft not include ICD-10 codes?">
+    ICD-10 codes are only generated from structured SOAP JSON. Free prose returns a manual-review draft without codes.
+  </Accordion>
+
+  <Accordion title="Does AfriHealth AI make clinical decisions?">
+    No. All outputs are drafts and decision support. A qualified clinician must review and sign off.
+  </Accordion>
+
+  <Accordion title="Which languages are supported?">
+    Amharic-English today. Afaan Oromoo-English and Tigrinya-English are on the roadmap. See [Languages](/resources/languages).
+  </Accordion>
+</AccordionGroup>

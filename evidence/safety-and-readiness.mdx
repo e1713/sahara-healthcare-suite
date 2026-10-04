@@ -1,0 +1,45 @@
+---
+title: "Clinical Safety Boundaries and Production Readiness"
+sidebarTitle: "Safety and Readiness"
+description: "Understand AfriHealth AI's human-in-the-loop safeguards, what the prototype does not do, and the readiness gates required before using real patient data."
+---
+
+AfriHealth AI is built to make clinical speech easier to document, never harder to verify. Every transcript and generated artifact is a draft for a qualified clinician. This page explains the safety boundaries of the prototype and the gates that remain open before operational use.
+
+## Human-in-the-loop by design
+
+- Transcripts, triage summaries, SOAP drafts, and ICD-10 suggestions are drafts until a clinician verifies them.
+- Module 2 requires **Verify & Sign Off** before any EHR commit.
+- Triage and follow-up support decisions. They do **not** diagnose, contact patients autonomously, or dispatch care.
+
+## Current status
+
+| Area | Status |
+| --- | --- |
+| Prototype | Functional |
+| Production | Not ready for identifiable data |
+| Provider credentials | Kept server-side |
+| Private validation inputs | Kept outside Git |
+
+## Open readiness gates
+
+<Warning>
+  Do not use the prototype with identifiable patient data until these gates are closed.
+</Warning>
+
+- Transcript retention and deletion controls.
+- Built-in clinician authentication and role-based access.
+- Verified production gateway configuration and exact production CORS origins.
+- End-to-end medication safety enforcement. Until then, verify all medication details independently.
+
+## Delivery priorities
+
+1. **Close production safety gates:** retention/deletion, authentication, and gateway checks.
+2. **Complete clinician-reviewed workflows:** validate transcript-to-SOAP and coding, and add a backend medication safety gate.
+3. **Strengthen evaluation evidence:** expand consented, de-identified Amharic-English evaluation.
+4. **Verify release and handoff:** confirm deployment and complete the team handoff checklist.
+
+## Related pages
+
+- [Benchmarks](/evidence/benchmarks)
+- [Voice EHR Intake](/modules/voice-ehr-intake)

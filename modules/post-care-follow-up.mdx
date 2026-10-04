@@ -1,0 +1,47 @@
+---
+title: "Run Voice Check-Ins After Discharge with Post-Care Follow-up"
+sidebarTitle: "Post-Care Follow-up"
+description: "Use Post-Care Follow-up to simulate or run voice check-in calls after discharge, score recovery risk, and flag patients who need nurse escalation."
+---
+
+The Post-Care Voice Follow-up module (Module 3) runs voice check-ins with patients after discharge and highlights possible escalation signals for a nurse or doctor. The demo focuses on Case 2: Lemlem, Day 3 after an appendectomy, speaking Amharic-English.
+
+## Simulate a follow-up call
+
+<Steps>
+  <Step title="Pick a scenario">
+    In the **Outpatient Call Simulator**, select **Simulate: Case 2 Stable Follow-up** or **Simulate: Case 2 Maternal Post-Op Review**.
+  </Step>
+  <Step title="Follow the transcript">
+    The **Outbound Voice Interaction Transcript** shows the conversation. **Parsed Status** updates in real time.
+  </Step>
+  <Step title="Act on escalations">
+    Flagged patients appear in the **Escalation Queue**. Select **Dispatch Nurse Alert** to notify a nurse.
+  </Step>
+</Steps>
+
+## Analyze a transcript
+
+The **Live Post-Care Protocol Analyzer** runs the clinical team's post-care protocol on transcript text.
+
+1. Choose a **Care track**: **General** or **Maternal (Annex 1-3 acuity scale)**.
+2. Select **Analyze**.
+
+You get a recovery risk score. Maternal patients also get a level on the 5-level obstetric acuity scale.
+
+## Run a real follow-up call
+
+**Start Real Follow-up Call** runs a live call loop with no LLM involved:
+
+1. Intron speaks each question aloud.
+2. Select **Record Answer** and answer by microphone.
+3. Intron transcribes the answer, and the protocol engine picks the next question, or escalates immediately if it hears an emergency.
+
+<Warning>
+  Results come from reported symptoms only. A nurse or doctor must confirm with real vitals and an exam. The module does not contact patients autonomously or dispatch care.
+</Warning>
+
+## Next steps
+
+- [Safety and Readiness](/evidence/safety-and-readiness)
+- [FAQ](/resources/faq)

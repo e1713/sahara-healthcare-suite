@@ -1,47 +1,63 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Set Up AfriHealth AI and Run Your First Triage Case"
+sidebarTitle: "Quickstart"
+description: "Learn how to set up AfriHealth AI in your browser, pass the system diagnostics checks, and run your first Amharic-English triage case in minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+Before you record any clinical audio, AfriHealth AI checks that your browser, microphone, and speech services are ready. This guide walks you through the **System Setup & Hardware Diagnostics** panel and then runs a sample case in the Frontline Triage module.
 
 ## Prerequisites
 
-Before you begin, you must have:
+- A modern browser with microphone access (Chrome, Edge, or Firefox recommended).
+- The prototype served over HTTPS or localhost. Browsers block microphone capture on insecure pages.
 
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+## Set up your system
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Open the diagnostics panel">
+    Open [the prototype](https://sahara-healthcare-suite.pages.dev/) and select **Diagnostics**. The **System Setup & Hardware Diagnostics** panel opens.
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
+  <Step title="Check the secure context">
+    **Browser Secure Context (HTTPS / Localhost)** runs automatically. It must pass before the microphone can be used.
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Test your microphone">
+    Next to **WebRTC Microphone Hardware Permission**, select **Test Mic** and allow microphone access when your browser asks.
+  </Step>
+  <Step title="Ping the speech engine">
+    Next to **Intron Sahara API Endpoint Status**, select **Ping API** to confirm the backend speech proxy is reachable.
+  </Step>
+  <Step title="Test voice output">
+    Next to **Speech Synthesis (AI Voice Response)**, select **Test Voice** to confirm your browser can read recommendations aloud.
+  </Step>
+  <Step title="Save your setup">
+    Select **Save & Return**.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+<Note>
+  The **EHR / FHIR Server Endpoint** check is optional. The integration boundary is documented, but no production endpoint is configured in the prototype.
+</Note>
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+## Run your first case
+
+<Steps>
+  <Step title="Pick a Gold Standard case">
+    In **Module 1: Frontline Triage**, select **Case 1: Acute Emergency (Chest Pain & Fever)**.
+  </Step>
+  <Step title="Process the audio">
+    Select **Pre-load Audio** to use the sample recording. Use **Judge Mode (No Mic Req.)** if you have no microphone.
+  </Step>
+  <Step title="Review the output">
+    Check the transcript, **Extracted Medical Entities**, and **Triage Classification**.
+  </Step>
+</Steps>
+
+## Result
+
+You see a code-switched transcript with a confidence score, extracted entities, and a draft referral recommendation for clinician review.
+
+## Next steps
+
+- [Frontline Triage](/modules/frontline-triage)
+- [Voice EHR Intake](/modules/voice-ehr-intake)
+- [Post-Care Follow-up](/modules/post-care-follow-up)
